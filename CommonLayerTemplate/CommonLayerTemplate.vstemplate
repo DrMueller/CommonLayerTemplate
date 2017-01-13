@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>CommonLayerTemplate</Name>
+    <Description>CommonLayerTemplate</Description>
+    <Icon>CommonLayerTemplate.ico</Icon>
+    <ProjectType>CSharp</ProjectType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <SortOrder>1000</SortOrder>
+    <TemplateID>5f468e17-e6f2-4660-890f-900d90b5d8d4</TemplateID>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>CommonLayerTemplate</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="ProjectTemplate.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+
+      <Folder Name="Interfaces" TargetFolderName="Interfaces">
+        <ProjectItem ReplaceParameters="true" TargetFileName="IUnityInitializer.cs">IUnityInitializer.cs</ProjectItem>
+      </Folder>
+
+      <Folder Name="Singletons" TargetFolderName="Singletons">
+        <ProjectItem ReplaceParameters="true" TargetFileName="UnityContainerSingleton.cs">UnityContainerSingleton.cs</ProjectItem>
+      </Folder>
+
+      <Folder Name="Packages" TargetFolderName="Packages">
+        <ProjectItem ReplaceParameters="true" TargetFileName="Unity.4.0.1.nupkg">Unity.4.0.1.nupkg</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="CommonServiceLocator.1.3.nupkg">CommonServiceLocator.1.3.nupkg</ProjectItem>
+      </Folder>
+    </Project>
+    
+  </TemplateContent>
+
+  <WizardExtension>
+    <Assembly>NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
+  </WizardExtension>
+
+  <WizardData>
+    <packages repository="template">
+      <package id="CommonServiceLocator" version="1.3" targetFramework="net452" />
+      <package id="Unity" version="4.0.1" targetFramework="net452" />
+    </packages>
+  </WizardData>
+</VSTemplate>
